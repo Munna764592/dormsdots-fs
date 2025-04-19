@@ -24,7 +24,7 @@ const useAuth = (): AuthContextType => {
     setLoading: () => {},
     loading: false,
     LoginModalOpen: () => {},
-    isLoggedIn: false
+    isLoggedIn: false,
   };
 };
 
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                   href="https://www.instagram.com/dormsdots"
                   target="_blank"
                   className="hover:text-white">
-                  dormsdots stories
+                  Community Hub
                 </Link>
               </li>
             </ul>
@@ -83,37 +83,38 @@ const Footer: React.FC = () => {
 
           {/* Help Section */}
           <div>
-            <h3 className="text-gray-400 font-medium mb-4">HELP</h3>
+            <h3 className="text-gray-400 font-medium mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  href="/helpcenter?id=general"
-                  className="hover:text-white">
-                  General Help
+                <Link href="/community-guidelines" className="hover:text-white">
+                  Partnerships
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookie-policy" className="hover:text-white">
+                  Creator Network
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/helpcenter?id=account"
+                  href="/working-location-policy"
                   className="hover:text-white">
-                  Account & Login
+                  Press & News
                 </Link>
               </li>
               <li>
-                <Link href="/helpcenter?id=buying" className="hover:text-white">
-                  Buying
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/helpcenter?id=selling"
-                  className="hover:text-white">
-                  Selling
+                <Link href="/helpcenter" className="hover:text-white">
+                  Add a Friends
                 </Link>
               </li>
               <li>
                 <Link href="/helpcenter?id=safety" className="hover:text-white">
-                  Safety & Security
+                  Invertor contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/community-guidelines" className="hover:text-white">
+                  Trust & Safety
                 </Link>
               </li>
             </ul>
@@ -121,15 +122,32 @@ const Footer: React.FC = () => {
 
           {/* Consumer Policy */}
           <div>
-            <h3 className="text-gray-400 font-medium mb-4">CONSUMER POLICY</h3>
+            <h3 className="text-gray-400 font-medium mb-4">POLICY</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/tc" className="hover:text-white">
+                <Link href="/community-guidelines" className="hover:text-white">
+                  Community Guidelines
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookie-policy" className="hover:text-white">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/working-location-policy"
+                  className="hover:text-white">
+                  Working Location Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-conditions" className="hover:text-white">
                   Terms Of Use
                 </Link>
               </li>
               <li>
-                <Link href="/pp" className="hover:text-white">
+                <Link href="/privacy-policy" className="hover:text-white">
                   Privacy & Security
                 </Link>
               </li>
@@ -214,17 +232,15 @@ const Footer: React.FC = () => {
                 href="/blogs"
                 className="text-sm hover:text-white"
                 onClick={handleLinkClick}>
-                Blogs
+                Stories
               </Link>
               <Link
                 href="/wishlist"
                 className="text-sm hover:text-white"
                 onClick={handleLinkClick}>
-                Wishlist
+                Contact Us
               </Link>
-              <Link
-                href="/helpcenter?id=general"
-                className="text-sm hover:text-white">
+              <Link href="/helpcenter" className="text-sm hover:text-white">
                 Help Center
               </Link>
             </div>

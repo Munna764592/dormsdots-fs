@@ -18,8 +18,9 @@ import {
   faLocation,
   faLocationDot,
   faRightFromBracket,
-  faHandHoldingHeart
+  faHandHoldingHeart,
 } from "@fortawesome/free-solid-svg-icons";
+import CurrencySelector from "./currency-selector";
 
 // Define types for user data
 interface UserData {
@@ -51,7 +52,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
   hamOpen,
   handleLinkClick,
   userData,
-  logout
+  logout,
 }) => {
   //   const { logout, userData } = useAuth();
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -111,7 +112,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
             <div
               style={{
                 boxShadow:
-                  "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
+                  "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
               }}
               className="h-10 w-10 text-xl flex justify-center items-center bg-gray-800 text-gray-500 rounded-full mr-2">
               <FontAwesomeIcon icon={faUser} />
@@ -153,28 +154,6 @@ const UserProfile: React.FC<UserProfileProps> = ({
           style={{ right: "-10px" }}
           className="absolute z-10 mt-2 w-48 bg-white rounded-md shadow-lg">
           <div className="py-1" role="menu">
-            {/* <div className="flex items-center px-4 py-2 text-gray-700 text-sm">
-              {imageError || !userData?.photoURL ? (
-                <div
-                  style={{
-                    boxShadow:
-                      "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
-                  }}
-                  className="h-10 w-10 text-xl flex justify-center items-center bg-gray-800 text-gray-500 rounded-full mr-2">
-                  <FontAwesomeIcon icon={faUser} />
-                </div>
-              ) : (
-                <Image
-                  width={200}
-                  height={200}
-                  src={userData?.photoURL}
-                  alt="User Profile"
-                  className="w-10 exclude-styles h-10 rounded-full mr-2"
-                  onError={() => setImageError(true)}
-                />
-              )}
-              <h3 className="w-20 truncate">{userData?.displayName}</h3>
-            </div> */}
             <div className="px-4">
               <hr />
             </div>
@@ -208,7 +187,7 @@ const useAuth = (): AuthContextType => {
     LoginModalOpen: () => {},
     userData: null,
     newmsg: 0,
-    logout: () => {}
+    logout: () => {},
   };
 };
 
@@ -455,6 +434,7 @@ const Fsnavbar: React.FC = () => {
               }`}>
               Become a Seller
             </Link>
+            <CurrencySelector isScrolled={isScrolled} />
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -488,7 +468,7 @@ const Fsnavbar: React.FC = () => {
           backgroundColor: isScrolled
             ? "rgba(255, 255, 255, 0.3)"
             : "rgba(255, 255, 255, 0.3)",
-          backdropFilter: "blur(10px)"
+          backdropFilter: "blur(10px)",
         }}>
         <div className="container mx-auto px-4 py-4">
           <form onSubmit={handleSearchSubmit} className="relative">
@@ -517,7 +497,7 @@ const Fsnavbar: React.FC = () => {
                 { name: "Website Design", href: "/webdesign" },
                 { name: "WordPress", href: "/wordpress" },
                 { name: "Logo Design", href: "/logodesign" },
-                { name: "AI Services", href: "/aiservices" }
+                { name: "AI Services", href: "/aiservices" },
               ].map((item, index) => (
                 <Link
                   key={index}
@@ -544,7 +524,7 @@ const Fsnavbar: React.FC = () => {
         }`}
         style={{
           top: "64px",
-          backdropFilter: "blur(10px)"
+          backdropFilter: "blur(10px)",
         }}>
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col space-y-4">
