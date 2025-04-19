@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'DevServe - Professional Web Services',
+  title: 'dormsdots - Professional Web Services',
   description: 'Professional web development and digital services',
 };
 

@@ -288,6 +288,28 @@ const Fsnavbar: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `
+      @keyframes slideDown {
+        0% {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      // Cleanup: remove the style tag when component unmounts
+      document.head.removeChild(style);
+    };
+  }, []);
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -592,20 +614,6 @@ const Fsnavbar: React.FC = () => {
   );
 };
 
-// Add this at the end of the file, before the export statement
-const style = document.createElement("style");
-style.textContent = `
-  @keyframes slideDown {
-    0% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-`;
-document.head.appendChild(style);
+// Add this at the end of the file, before the export statemen
 
 export default Fsnavbar;
